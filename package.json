@@ -1,0 +1,31 @@
+{
+  "name": "ishbekov_stroi_backend",
+  "version": "1.0.0",
+  "description": "\"Ishbekov Stroi Service\" - uchun backend codelari",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js"
+  },
+  "keywords": [
+    "backend",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "Baxtiyorov She'rozbek",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "ip": "^2.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "knex": "^3.1.0",
+    "mongoose": "^8.6.3",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.6",
+    "pg": "^8.13.0",
+    "socket.io": "^4.7.5"
+  }
+}
