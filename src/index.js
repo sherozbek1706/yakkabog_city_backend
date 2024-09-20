@@ -1,6 +1,6 @@
 const express = require("express");
 const config = require("./shared/config/index");
-const mongodb = require("./database/mongodb");
+const mongodb = require("./db/mongodb");
 const cors = require("cors");
 
 const app = express();
