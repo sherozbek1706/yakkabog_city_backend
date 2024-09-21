@@ -13,9 +13,11 @@ module.exports = async ({ body }) => {
   }
 
   let payload = {
-    id: found.id,
-    role: found.role,
-    created_time: new Date(),
+    user: {
+      id: found.id,
+      role: found.role,
+      created_time: new Date(),
+    },
   };
 
   const token = jwt.sign(payload, config.jwt.secret, {
