@@ -11,5 +11,18 @@ Content-Type: application/json
   "password":"1234"
 }
 
+
+
 ### GET
 GET http://localhost:5000/api/v1/admin/list
+
+
+
+### POST LOGIN
+POST http://localhost:5000/api/v1/admin/login
+Content-Type: application/json
+
+{
+  "username": "sherozbek",
+  "password": "1234"
+}
