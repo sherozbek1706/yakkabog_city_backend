@@ -3,10 +3,13 @@ POST http://localhost:5000/api/v1/admin/add
 Content-Type: application/json
 
 {
-  "first_name":"sherozbek",
-  "last_name": "Baxtiyorov",
-  "phone_number": "+998938340617",
-  "username": "sherozbek",
-  "role": "super_admin",
+  "first_name":"Azizbek",
+  "last_name": "Akramov",
+  "phone_number": "+998335689962",
+  "username": "aziz.akramov",
+  "role": "admin",
   "password":"1234"
 }
+
+### GET
+GET http://localhost:5000/api/v1/admin/list
