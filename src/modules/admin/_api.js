@@ -10,5 +10,6 @@ router.post("/add", mSuperList, controller.add);
 router.get("/list", mList, controller.list);
 router.post("/login", controller.login);
 router.delete("/remove/:id", controller.remove);
+router.delete("/unremove/:id", controller.unremove);
 
 module.exports = router;

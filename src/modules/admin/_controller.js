@@ -64,9 +64,25 @@ const remove = async (req, res, next) => {
   );
 };
 
+/**
+ *
+ * @param {express.Request} req
+ * @param {express.Response} res
+ * @param {express.Response} next
+ */
+const unremove = async (req, res, next) => {
+  await common.controller["middle-function"](
+    { res, next },
+    services.unremove,
+    { params: req.params },
+    200
+  );
+};
+
 module.exports = {
   add,
   list,
   login,
   remove,
+  unremove,
 };
