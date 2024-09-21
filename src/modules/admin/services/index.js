@@ -4,6 +4,7 @@ const services = {
   login: require("./_login"),
   remove: require("./_remove"),
   unremove: require("./_unremove"),
+  removedList: require("./_removedList"),
 };
 
 module.exports = services;
