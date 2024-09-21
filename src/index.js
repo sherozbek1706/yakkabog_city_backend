@@ -12,6 +12,12 @@ app.use(cors());
 // import handleError
 const handleError = require("./shared/errors/handle");
 
+//import GeneralRoute
+const router = require("./router");
+
+// registered Route
+app.use("/api/v1", router);
+
 // registered Error
 app.use(handleError);
 

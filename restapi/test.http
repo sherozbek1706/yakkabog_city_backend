@@ -1,0 +1,12 @@
+### POST
+POST http://localhost:5000/api/v1/admin/add
+Content-Type: application/json
+
+{
+  "first_name":"sherozbek",
+  "last_name": "Baxtiyorov",
+  "phone_number": "+998938340617",
+  "username": "sherozbek",
+  "role": "super_admin",
+  "password":"1234"
+}
