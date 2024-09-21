@@ -9,5 +9,6 @@ const mList = [isLoggedIn, hasRole(["admin", "super_admin"])];
 router.post("/add", mSuperList, controller.add);
 router.get("/list", mList, controller.list);
 router.post("/login", controller.login);
+router.delete("/remove/:id", controller.remove);
 
 module.exports = router;

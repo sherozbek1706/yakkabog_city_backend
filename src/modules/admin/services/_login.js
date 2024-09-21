@@ -5,7 +5,11 @@ const jwt = require("jsonwebtoken");
 const config = require("../../../shared/config");
 module.exports = async ({ body }) => {
   let { username, password } = body;
-  let found = await common.checkings.found("admin", { username }, "Username");
+  let found = await common.checkings.found(
+    "admin",
+    { username, is_deleted: false },
+    "Admin"
+  );
   let isCorrectly = await bcrypt.compare(password, found.password);
 
   if (!isCorrectly) {
