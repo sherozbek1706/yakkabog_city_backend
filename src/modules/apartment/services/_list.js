@@ -22,6 +22,7 @@ module.exports = async ({ query }) => {
       "apartment.apartment_number",
       "apartment.field",
       "apartment.number_of_rooms",
+      "apartment.number_of_rooms_in_floor",
       "apartment.price_per_square_meter",
       "apartment.total_price",
       "apartment.total_floor",
@@ -47,9 +48,11 @@ module.exports = async ({ query }) => {
 
   // Filter by is_sold
   if (is_sold === "true") {
-    list.where("apartment.is_sold", true);
+    list.where("apartment.is_sold", "true");
   } else if (is_sold === "false") {
-    list.where("apartment.is_sold", false);
+    list.where("apartment.is_sold", "false");
+  } else if (is_sold === "bron") {
+    list.where("apartment.is_sold", "bron");
   }
 
   // Sort by apartment_number
@@ -59,7 +62,7 @@ module.exports = async ({ query }) => {
 
   // Sort by total_price
   if (total_price) {
-    list.orderBy("apartment.total_price", total_price); // 'asc' or 'desc'
+    list.orderBy("apartment.total_price", total_price); // 'asc' oR'desc'
   }
 
   let data = await list;

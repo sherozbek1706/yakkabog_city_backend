@@ -24,7 +24,16 @@ exports.up = function (knex) {
     table
       .enum("order_payment", ["ipoteka", "nasiya", "tuliq_tulov"])
       .notNullable();
-    table.float("down_payment_amount").notNullable();
+    table.float("initial_payment_amount").notNullable();
+    table.float("initial_payment_amount_percent").notNullable();
+    table.float("umumiy_summa").notNullable();
+    table.integer("muddatli_tulov_oyi").notNullable();
+    table.float("metr_kvadrati_puli").notNullable();
+    table.float("qolgan_summa").notNullable();
+    table.float("umumiy_tulangan_summa").notNullable();
+    table.float("chegirma_summa").notNullable();
+    table.float("oyiga_qanchadan_tushadi").notNullable();
+    table.jsonb("oylik_tulovlar").notNullable().defaultTo("[]");
     table.enum("payment_method", ["pul", "karta", "perevod"]).notNullable();
     table.float("percent_aksiya").notNullable();
     table.boolean("is_deleted").defaultTo(false);

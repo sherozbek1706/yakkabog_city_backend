@@ -2,6 +2,9 @@ const express = require("express");
 const config = require("./shared/config/index");
 const mongodb = require("./db/mongodb");
 const cors = require("cors");
+const ip = require("ip");
+
+console.log(ip.address());
 
 const app = express();
 const PORT = config.port || 9000;

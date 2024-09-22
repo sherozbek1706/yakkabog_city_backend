@@ -15,7 +15,10 @@ exports.up = function (knex) {
     table.float("price_per_square_meter").notNullable();
     table.float("total_price").notNullable();
     table.integer("total_floor").notNullable();
-    table.boolean("is_sold").defaultTo(false).notNullable();
+    table
+      .enum("is_sold", ["false", "bron", "true"])
+      .defaultTo("false")
+      .notNullable();
     table
       .integer("admin_id")
       .references("id")
