@@ -17,7 +17,7 @@ const list = async (req, res, next) => {
   await common.controller["middle-function"](
     { res, next },
     services.list,
-    {},
+    { query: req.query },
     200
   );
 };
