@@ -8,5 +8,6 @@ const mList = [isLoggedIn, hasRole(["super_admin", "admin"]), middleware];
 const mSuperList = [isLoggedIn, hasRole(["admin"]), middleware];
 
 router.post("/add", mList, controller.add);
+router.get("/list", mList, controller.list);
 
 module.exports = router;
