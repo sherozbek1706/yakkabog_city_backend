@@ -22,4 +22,13 @@ const list = async (req, res, next) => {
   );
 };
 
-module.exports = { add, list };
+const get = async (req, res, next) => {
+  await common.controller["middle-function"](
+    { res, next },
+    services.get,
+    { params: req.params },
+    200
+  );
+};
+
+module.exports = { add, list, get };
