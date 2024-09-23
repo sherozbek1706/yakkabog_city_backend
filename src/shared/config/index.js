@@ -15,6 +15,5 @@ const config = {
     expirec_in: process.env.JWT_EXPIRES_IN,
   },
 };
-console.log(process.env.DB_PASSWORD);
 
 module.exports = config;
