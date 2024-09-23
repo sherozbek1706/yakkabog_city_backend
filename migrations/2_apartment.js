@@ -11,8 +11,8 @@ exports.up = function (knex) {
     table.integer("apartment_number").notNullable();
     table.float("field").notNullable();
     table.integer("number_of_rooms").notNullable();
-    table.float("one_square").notNullable();
-    table.float("total_sum").notNullable();
+    table.float("price_per_square_meter").notNullable();
+    table.float("total_price").notNullable();
     table.integer("total_floor").notNullable();
     table.boolean("is_sold").defaultTo(false).notNullable();
     table
