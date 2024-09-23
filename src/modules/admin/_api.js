@@ -12,5 +12,6 @@ router.post("/login", controller.login);
 router.delete("/remove/:id", controller.remove);
 router.delete("/unremove/:id", controller.unremove);
 router.get("/removed/list", controller.removedList);
+router.get("/get/:id", mList, controller.get);
 
 module.exports = router;
