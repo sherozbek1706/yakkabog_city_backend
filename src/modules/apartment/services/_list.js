@@ -5,6 +5,8 @@ module.exports = async ({ query }) => {
   const {
     block_number = "",
     entrance = "",
+    floor = "",
+    number_of_rooms = "",
     is_sold,
     apartment_number,
     total_price,
@@ -36,6 +38,12 @@ module.exports = async ({ query }) => {
 
   // Padyezd bo'yicha qidirish
   if (entrance) list.andWhere({ entrance });
+
+  // Qavat bo'yicha qidirish
+  if (floor) list.andWhere({ floor });
+
+  // Xonalar soni bo'yicha qidirish
+  if (number_of_rooms) list.andWhere({ number_of_rooms });
 
   // Filter by is_sold
   if (is_sold === "true") {
