@@ -11,6 +11,7 @@ const common = {
     phone_number: require("./checking/phone_number"),
     exist: require("./checking/exist"),
     found: require("./checking/found"),
+    passport: require("./checking/passport"),
   },
   helper: {
     hashPassword: require("./helper/hashPassword"),
