@@ -7,6 +7,7 @@ const add = async (req, res, next) => {
     services.add,
     {
       body: req.body,
+      user: req.user,
     },
     201
   );
