@@ -1,17 +1,21 @@
 const common = require("../../../common");
+const { db } = require("../../../db");
 const { BadRequestError } = require("../../../shared/errors");
 
 module.exports = async ({ body, user }) => {
-  const { phone_number1, phone_number2, passport_series, PINFL } = body;
+  const { block_number, apartment_number, floor, number_of_rooms, entrance } =
+    body;
+  const elem = await db("apartment")
+    .where({ block_number, apartment_number, floor, number_of_rooms, entrance })
+    .first();
 
-  // bazi bir tekshirishlar
-  common.checkings.phone_number(phone_number1);
-  common.checkings.phone_number(phone_number2);
-  common.checkings.passport(passport_series);
-
-  if (PINFL.length != 14) {
-    throw new BadRequestError("PINFL xato kiritlgan");
+  if (!elem) {
+    throw BadRequestError("Xonadon topilmadi! Qaytadan urinib ko'ring!");
   }
 
-  return body;
+  return db("contract").insert({
+    ...body,
+    admin_id: user.id,
+    apartment_id: elem.id,
+  });
 };
