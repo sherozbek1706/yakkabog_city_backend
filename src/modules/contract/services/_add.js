@@ -12,10 +12,20 @@ module.exports = async ({ body, user }) => {
   if (!elem) {
     throw BadRequestError("Xonadon topilmadi! Qaytadan urinib ko'ring!");
   }
+  let contact = await db("contract")
+    .insert({
+      ...body,
+      admin_id: user.id,
+      apartment_id: elem.id,
+    })
+    .returning("*");
 
-  return db("contract").insert({
-    ...body,
-    admin_id: user.id,
-    apartment_id: elem.id,
-  });
+  let change = await db("apartment")
+    .where({ id: elem.id })
+    .update({ is_sold: "true" })
+    .returning("*");
+
+  console.log(change);
+
+  return contact;
 };
