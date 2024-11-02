@@ -7,5 +7,5 @@ const middleware = require("../admin/middleware");
 const mAnyAdmin = [isLoggedIn, hasRole(["admin", "super_admin"]), middleware];
 
 router.post("/add", mAnyAdmin, controller.add);
-
+router.get("/list", mAnyAdmin, controller.list);
 module.exports = router;

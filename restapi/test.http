@@ -14,8 +14,8 @@ Content-Type: application/json
 
 
 ### GET
-GET http://localhost:5000/api/v1/admin/list
-
+GET http://localhost:5000/api/v1/contract/list
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJyb2xlIjoic3VwZXJfYWRtaW4iLCJjcmVhdGVkX3RpbWUiOiIyMDI0LTExLTAyVDA5OjM5OjI1LjE4OFoifSwiaWF0IjoxNzMwNTQwMzY1LCJleHAiOjE3MzExNDUxNjV9.8bRMrGX8zaCrUo0c8RNJokxwsbCw09dpzmnRo8S6oDY
 
 
 ### POST LOGIN
