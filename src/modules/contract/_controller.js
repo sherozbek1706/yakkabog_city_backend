@@ -33,4 +33,26 @@ const get = async (req, res, next) => {
   );
 };
 
-module.exports = { add, list, get };
+const pay = async (req, res, next) => {
+  await common.controller["middle-function"](
+    { res, next },
+    services.pay,
+    {
+      body: req.body,
+    },
+    200
+  );
+};
+
+const statsPayments = async (req, res, next) => {
+  await common.controller["middle-function"](
+    { res, next },
+    services.statsPayments,
+    {
+      params: req.params,
+    },
+    200
+  );
+};
+
+module.exports = { add, list, get, pay, statsPayments };
