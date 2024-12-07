@@ -15,4 +15,14 @@ const findApartment = (etaj, podyezd, xonaningetajdagiraqami) => {
   return apartmentNumber;
 };
 
-module.exports = { findApartment };
+const formatmoney = (money) => {
+  const formattedNumber = money.toLocaleString("en-US", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+    useGrouping: true,
+  });
+
+  return formattedNumber;
+};
+
+module.exports = { findApartment, formatmoney };
