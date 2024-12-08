@@ -1,6 +1,6 @@
 const { db } = require("../../../db");
 const common = require("../../../common");
-const { formatmoney } = require("../../../shared/function");
+const { formatmoney, formatDate } = require("../../../shared/function");
 
 module.exports = async ({ params }) => {
   let { id } = params;
@@ -13,9 +13,12 @@ module.exports = async ({ params }) => {
 
   tulovlar.forEach((elem) => {
     let obj = {
-      sana: `${elem.id} T`,
-      tulov: elem.pay,
+      raqam: elem?.id,
+      tulov: elem?.pay,
       belgilangan: standart,
+      sana: elem?.date,
+      qolgan_summa: elem?.qolganSumma,
+      standart: elem?.oylik_tushadigan_tulov_standart,
     };
     data.push(obj);
   });
