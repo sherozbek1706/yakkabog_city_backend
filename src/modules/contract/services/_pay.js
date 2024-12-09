@@ -20,6 +20,10 @@ module.exports = async ({ body }) => {
     ...body,
     id: existed.oylik_tulovlar.length + 1, // To'lov ID'si
     date: new Date().toISOString(), // Sana qo'shiladi
+    qolganSumma: existed.qolgan_summa - pay,
+    oylik_tushadigan_tulov_standart:
+      (existed.qolgan_summa - pay) /
+      (existed?.muddatli_tulov_oyi - (existed.oylik_tulovlar.length + 1)),
   };
 
   // Oylik to'lovlar ro'yxatiga yangi to'lovni qo'shish
