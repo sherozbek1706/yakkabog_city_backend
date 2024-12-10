@@ -20,12 +20,10 @@ module.exports = async ({ body, user }) => {
     })
     .returning("*");
 
-  let change = await db("apartment")
+  await db("apartment")
     .where({ id: elem.id })
     .update({ is_sold: "true" })
     .returning("*");
-
-  console.log(change);
 
   return contact;
 };
