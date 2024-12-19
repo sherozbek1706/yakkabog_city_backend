@@ -12,8 +12,11 @@ module.exports = async ({ body, user }) => {
   } = body;
   let total_price = field * price_per_square_meter;
 
+  let list = await db("apartment").select("*");
+
   return await db("apartment")
     .insert({
+      id: list.length + 1,
       ...body,
       total_price,
       admin_id: id,
@@ -24,6 +27,4 @@ module.exports = async ({ body, user }) => {
       ),
     })
     .returning("*");
-
-  return body;
 };
